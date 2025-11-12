@@ -52,7 +52,7 @@ namespace ClearSky
                 direction = -1;
                 moveVelocity = Vector3.left;
 
-                transform.localScale = new Vector3(direction, 1, 1);
+                transform.localScale = new Vector3(direction * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
                 if (!anim.GetBool("isJump"))
                     anim.SetBool("isRun", true);
 
@@ -62,7 +62,7 @@ namespace ClearSky
                 direction = 1;
                 moveVelocity = Vector3.right;
 
-                transform.localScale = new Vector3(direction, 1, 1);
+                transform.localScale = new Vector3(direction * Mathf.Abs( transform.localScale.x), transform.localScale.y, transform.localScale.z);
                 if (!anim.GetBool("isJump"))
                     anim.SetBool("isRun", true);
 
