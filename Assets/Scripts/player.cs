@@ -51,7 +51,8 @@ public class player : Character, IShootable
             if (banana != null)
                 banana.InitWeapon(20,this);
             WaitTime = 0.0f;
-   
+            anim.SetTrigger("attack");
+
         }
     }
 
