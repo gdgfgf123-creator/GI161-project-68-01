@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 public class player : Character, IShootable
@@ -7,7 +8,13 @@ public class player : Character, IShootable
     [field : SerializeField]public Transform ShootPoint { get; set ; }
     public float ReloadTime { get ; set ; }
     public float WaitTime { get ; set; }
-    
+
+    public float dashSpeed = 50f;
+    public float dashTime = 0.2f;
+    public float dashCooldown = 1f;
+    private bool isDashing = false;
+    private float dashTimer;
+    private TrailRenderer trail;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +24,11 @@ public class player : Character, IShootable
         base.Intialize(100);
         ReloadTime = 1.0f;
         WaitTime = 1.0f;
+
+        // ถ้ามี TrailRenderer ในตัว ให้เก็บไว้ใช้
+        trail = GetComponent<TrailRenderer>();
+        if (trail != null)
+            trail.emitting = false; // ปิดไว้ก่อน
     }
 
     public void OnHitWith(Enemy enemy)
@@ -41,6 +53,40 @@ public class player : Character, IShootable
         Shoot();
         WaitTime += Time.deltaTime;
         HP.value = Health;
+
+        // เรียก Dash ด้วยปุ่ม Shift (หรือปรับได้)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && Time.time > dashTimer)
+        {
+            StartCoroutine(Dash());
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        dashTimer = Time.time + dashCooldown;
+        anim.SetBool("isRun", false);
+        // เปิด trail ตอน dash
+        if (trail != null)
+            trail.emitting = true;
+
+        float originalGravity = rd.gravityScale;
+
+        // ปิดแรงโน้มถ่วงชั่วคราว (กันตก)
+        rd.gravityScale = 0;
+        rd.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+
+        // รอ dashTime วินาที
+        yield return new WaitForSeconds(dashTime);
+
+        // ปิด trail แล้วกลับสู่ปกติ
+        if (trail != null)
+            trail.emitting = false;
+
+        rd.gravityScale = originalGravity;
+        rd.velocity = Vector2.zero;
+        isDashing = false;
+
     }
 
     public void Shoot()
