@@ -23,7 +23,7 @@ public class Banana : Weapon
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = 4.0f * GetShootDirection();
+        speed = 10.0f * GetShootDirection();
         damge = 30;
     }
     private void FixedUpdate()

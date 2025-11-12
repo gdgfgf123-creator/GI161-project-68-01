@@ -14,8 +14,8 @@ public class player : Character, IShootable
     public float dashCooldown = 1f;
     private bool isDashing = false;
     private float dashTimer;
-    private TrailRenderer trail;
-
+    [SerializeField]private TrailRenderer trail;
+    [SerializeField] private ParticleSystem GunFireVFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,7 +26,7 @@ public class player : Character, IShootable
         WaitTime = 1.0f;
 
         // ถ้ามี TrailRenderer ในตัว ให้เก็บไว้ใช้
-        trail = GetComponent<TrailRenderer>();
+        //trail = GetComponent<TrailRenderer>();
         if (trail != null)
             trail.emitting = false; // ปิดไว้ก่อน
     }
@@ -43,6 +43,7 @@ public class player : Character, IShootable
             OnHitWith(enemy);
         }
     }
+    
     private void FixedUpdate()
     {
         
@@ -99,7 +100,7 @@ public class player : Character, IShootable
                 banana.InitWeapon(20,this);
             WaitTime = 0.0f;
             anim.SetTrigger("attack");
-
+            GunFireVFX.Play();
         }
     }
     internal void Heal(int healAmount)
