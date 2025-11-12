@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 public class player : Character, IShootable
 {
@@ -55,5 +56,14 @@ public class player : Character, IShootable
 
         }
     }
+    internal void Heal(int healAmount)
+    {
+        Health += healAmount;
 
+        // จำกัดไม่ให้เกินค่าสูงสุด (ถ้ามีระบบ max health)
+        if (Health > HP.maxValue)
+            Health = (int)HP.maxValue;
+
+        Debug.Log($"{this.name} healed by {healAmount}. Current Health: {this.Health}");
+    }
 }
