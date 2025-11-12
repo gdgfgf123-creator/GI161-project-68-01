@@ -4,7 +4,7 @@ using UnityEngine.WSA;
 public class Banana : Weapon
 {
     [SerializeField]private float speed;
-
+    [SerializeField] private ParticleSystem GunFireVFX;
     public override void Move()
     {
         float newX = transform.position.x + speed * Time.fixedDeltaTime;
@@ -17,7 +17,7 @@ public class Banana : Weapon
     {
         if (character is Enemy)
              character.TakeDamage(this.damge);
-        
+        GunFireVFX.Play();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
