@@ -2,7 +2,7 @@
 
 namespace ClearSky
 {
-    public class SimplePlayerController : MonoBehaviour
+    public class SimplePlayerController : Character
     {
         public float movePower = 10f;
         public float jumpPower = 15f; //Set Gravity Scale in Rigidbody2D Component to 5

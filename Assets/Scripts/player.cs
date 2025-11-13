@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class player : Character, IShootable
 {
+    [SerializeField] public Slider HP;
     [field : SerializeField]public GameObject Bullet { get; set; }
     [field : SerializeField]public Transform ShootPoint { get; set ; }
     public float ReloadTime { get ; set ; }
@@ -16,12 +17,14 @@ public class player : Character, IShootable
     private float dashTimer;
     [SerializeField]private TrailRenderer trail;
     [SerializeField] private ParticleSystem GunFireVFX;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
-        HP.maxValue = 100;
-        base.Intialize(100);
+        HP.maxValue = 1000;
+        base.Intialize(1000);
         ReloadTime = 1.0f;
         WaitTime = 1.0f;
 

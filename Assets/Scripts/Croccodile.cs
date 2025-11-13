@@ -35,7 +35,7 @@ public class Croccodile : Enemy, IShootable
         Vector2 distance = transform.position - player.transform.position;
         if (distance.magnitude <= atkRange)
         {
-            Debug.Log($"{player.name} is in the {this.name}'s atk range!");
+            
             Shoot();
         }
     }
