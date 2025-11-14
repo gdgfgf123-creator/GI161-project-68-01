@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public abstract class Character : MonoBehaviour
 {
     [SerializeField] public Slider HP;
-    private int health;
+    [SerializeField]private int health;
     protected bool alive = true;
     public int Health
     {

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Cainos.PixelArtPlatformer_VillageProps;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 public class player : Character, IShootable
 {
-    [SerializeField] public Slider HP;
+    
     [field : SerializeField]public GameObject Bullet { get; set; }
     [field : SerializeField]public Transform ShootPoint { get; set ; }
     public float ReloadTime { get ; set ; }
@@ -115,5 +116,16 @@ public class player : Character, IShootable
             Health = (int)HP.maxValue;
 
         Debug.Log($"{this.name} healed by {healAmount}. Current Health: {this.Health}");
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Chest") && Input.GetKeyDown(KeyCode.E))
+        {
+            Chest chest = other.GetComponent<Chest>();
+            if (chest != null)
+            {
+                chest.Open();  // เปิดกล่อง
+            }
+        }
     }
 }

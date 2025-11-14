@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.WSA;
 
-public class Banana : Weapon
+public class Fire : Weapon
 {
-    [SerializeField]private float speed;
+    [SerializeField] private float speed;
     [SerializeField] private ParticleSystem GunFireVFX;
     public override void Move()
     {
@@ -15,15 +15,15 @@ public class Banana : Weapon
 
     public override void OnHItWith(Character character)
     {
-        if (character is Enemy)
-             character.TakeDamage(this.damge);
+        if (character is player)
+            character.TakeDamage(this.damge);
         GunFireVFX.Play();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        speed = 20.0f * GetShootDirection();
+        speed = 10.0f * GetShootDirection();
         damge = 30;
     }
     private void FixedUpdate()
@@ -33,6 +33,6 @@ public class Banana : Weapon
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class Croccodile : Enemy, IShootable
+public class Boss2D : Enemy, IShootable
 {
     [SerializeField] float atkRange;
     public player player;
@@ -10,9 +9,6 @@ public class Croccodile : Enemy, IShootable
     [field: SerializeField] public Transform ShootPoint { get; set; }
     public float ReloadTime { get; set; }
     public float WaitTime { get; set; }
-    
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         HP.maxValue = 50;
@@ -35,6 +31,7 @@ public class Croccodile : Enemy, IShootable
         Vector2 distance = transform.position - player.transform.position;
         if (distance.magnitude <= atkRange)
         {
+
             Shoot();
         }
     }
@@ -44,8 +41,8 @@ public class Croccodile : Enemy, IShootable
         {
             anim.SetTrigger("Shoot");
             var bullet = Instantiate(Bullet, ShootPoint.position, Quaternion.identity);
-            Rock rock = bullet.GetComponent<Rock>();
-            rock.InitWeapon(30, this);
+            Banana banana = bullet.GetComponent<Banana>();
+            banana.InitWeapon(30, this);
             WaitTime = 0;
         }
 
