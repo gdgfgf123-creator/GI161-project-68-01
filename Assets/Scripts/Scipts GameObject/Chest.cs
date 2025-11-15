@@ -9,6 +9,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
 {
     public class Chest : MonoBehaviour
     {
+        public int itemCount = 3;
         public TMP_Text interactText;
         [FoldoutGroup("Reference")]
         public Animator animator;
@@ -45,9 +46,10 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         private bool canInteract = false;
 
         [Header("Item Settings")]
-        public GameObject itemPrefab; // Prefab ของไอเท็ม
+        public List<GameObject> itemPrefabs; // รายการ Prefab ของไอเท็มหลายชนิด
+
         public Transform spawnPoint;  // จุดเกิดของไอเท็ม (ถ้าไม่กำหนดจะใช้ตำแหน่ง Chest)
-        public float spawnForce = 5f; // ความแรงตอนเด้งออก
+        public float spawnForce = 10f; // ความแรงตอนเด้งออก
         public float randomAngle = 30f; // มุมสุ่มกระเด้งออก
 
         private void Start()
@@ -92,17 +94,22 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         // ฟังก์ชันปล่อยไอเท็มเด้งออก
         private void SpawnItem()
         {
-            if (itemPrefab != null)
+            if (itemPrefabs == null || itemPrefabs.Count == 0) return;
+
+            Vector3 spawnPos = spawnPoint != null ? spawnPoint.position : transform.position;
+
+            for (int i = 0; i < itemCount; i++)
             {
-                Vector3 spawnPos = spawnPoint != null ? spawnPoint.position : transform.position;
-                GameObject item = Instantiate(itemPrefab, spawnPos, Quaternion.identity);
+                // สุ่ม Prefab จากรายการ
+                GameObject prefab = itemPrefabs[Random.Range(0, itemPrefabs.Count)];
+                GameObject item = Instantiate(prefab, spawnPos, Quaternion.identity);
 
                 // เพิ่ม Rigidbody2D ถ้ายังไม่มี
                 Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
                 if (rb == null)
                     rb = item.AddComponent<Rigidbody2D>();
 
-                rb.gravityScale = 1; // เปิดแรงโน้มถ่วง
+                rb.gravityScale = 1;
                 rb.mass = 1;
 
                 // สุ่มมุมและแรงเด้งออก

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 3109577606308801340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.63, z: 0.057009164}
+  m_LocalPosition: {x: 0.01, y: 0.78, z: 0.057009164}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -314,6 +314,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2963945286439098189, guid: b9bf9bb2daee39240b02a38131ad06e7, type: 3}
     - target: {fileID: -6481186291204602604, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
+      propertyPath: spawnForce
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481186291204602604, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 8866808508568789211}
@@ -321,6 +325,22 @@ PrefabInstance:
       propertyPath: interactText
       value: 
       objectReference: {fileID: 458687936933337543}
+    - target: {fileID: -6481186291204602604, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
+      propertyPath: itemPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6481186291204602604, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
+      propertyPath: 'itemPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2963945286439098189, guid: b9bf9bb2daee39240b02a38131ad06e7, type: 3}
+    - target: {fileID: -6481186291204602604, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
+      propertyPath: 'itemPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 7357748399082584529, guid: 0f6f3500e78146c4a8fadb2e42fabef2, type: 3}
+    - target: {fileID: -6481186291204602604, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
+      propertyPath: 'itemPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8870360609336244549, guid: b82b997779c39f240a36ec57d41807e1, type: 3}
     - target: {fileID: 1671459498715919559, guid: cea950ff3b9b0804f967eaec919f19f7, type: 3}
       propertyPath: m_TagString
       value: Chest
