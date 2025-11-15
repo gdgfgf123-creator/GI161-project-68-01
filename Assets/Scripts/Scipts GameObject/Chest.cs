@@ -9,6 +9,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
 {
     public class Chest : MonoBehaviour
     {
+        public TMP_Text interactText;
         [FoldoutGroup("Reference")]
         public Animator animator;
 
@@ -40,7 +41,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         }
 
         [Header("Interaction")]
-        public TMP_Text interactText;
+        
         private bool canInteract = false;
 
         [Header("Item Settings")]

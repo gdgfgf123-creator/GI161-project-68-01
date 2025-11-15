@@ -4,8 +4,9 @@ using TMPro;
 
 public class TP : MonoBehaviour
 {
-    public string sceneName;
     public TMP_Text interactText;
+    public string sceneName;
+    
     public KeyCode key = KeyCode.F;
 
     private bool canSwitch = false;
