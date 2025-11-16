@@ -17,7 +17,12 @@ public class Banana : Weapon
     {
         if (character is Enemy)
              character.TakeDamage(this.damge);
+        GunFireVFX.gameObject.SetActive(true);
         GunFireVFX.Play();
+        GunFireVFX.transform.parent = null;
+        //GetComponent<SpriteRenderer>().enabled = false;
+        //GetComponent<Collider2D>().enabled = false;        
+        Destroy(gameObject);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

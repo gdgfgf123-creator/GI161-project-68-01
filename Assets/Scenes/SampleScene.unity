@@ -4902,42 +4902,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: itemCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: spawnForce
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: itemPrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: 'itemPrefabs.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2963945286439098189, guid: b9bf9bb2daee39240b02a38131ad06e7, type: 3}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: 'itemPrefabs.Array.data[1]'
-      value: 
-      objectReference: {fileID: 7357748399082584529, guid: 0f6f3500e78146c4a8fadb2e42fabef2, type: 3}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: 'itemPrefabs.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8870360609336244549, guid: b82b997779c39f240a36ec57d41807e1, type: 3}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: 'itemPrefabs.Array.data[3]'
-      value: 
-      objectReference: {fileID: 7947017948456098524, guid: 8896e8754ef8f24448453d536fe2eaa8, type: 3}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: 'itemPrefabs.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8240303210866886955, guid: 98eb9947491eaf943b7de1650a84d6f8, type: 3}
-    - target: {fileID: 152094158294791005, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: 'itemPrefabs.Array.data[5]'
-      value: 
-      objectReference: {fileID: 8606758959808731287, guid: dddf8adc98b5b054f8cb8ff41b1100b4, type: 3}
     - target: {fileID: 4893632799050415896, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
       propertyPath: m_Name
       value: Chest
@@ -4981,10 +4945,6 @@ PrefabInstance:
     - target: {fileID: 6509699756574645702, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8866808508568789211, guid: be6a1b2f8a65266458488c1c773c13fd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.78
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5261,6 +5221,10 @@ PrefabInstance:
     - target: {fileID: 8606758959808731287, guid: dddf8adc98b5b054f8cb8ff41b1100b4, type: 3}
       propertyPath: m_Name
       value: Watermelon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8606758959808731287, guid: dddf8adc98b5b054f8cb8ff41b1100b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
