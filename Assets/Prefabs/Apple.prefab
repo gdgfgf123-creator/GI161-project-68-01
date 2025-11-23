@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2624793950372042508}
   - component: {fileID: 6195264616235563669}
   - component: {fileID: 8774582766160101834}
-  - component: {fileID: 4089830265642728362}
   - component: {fileID: 8859146814865784594}
+  - component: {fileID: 8776465115986071404}
   m_Layer: 0
   m_Name: Apple
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2963945286439098189}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -38.85, y: 0.59, z: 0.07612677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -117,20 +117,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &4089830265642728362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2963945286439098189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2feefea78b44dc44ebd234f0b345321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healAmount: 50
-  anim: {fileID: 0}
 --- !u!61 &8859146814865784594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +163,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &8776465115986071404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2963945286439098189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e73c513acde9c4a8e205f1c10b153d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ItemValue>k__BackingField: 20

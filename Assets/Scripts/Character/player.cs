@@ -10,7 +10,7 @@ public class player : Character, IShootable
     [field : SerializeField]public Transform ShootPoint { get; set ; }
     public float ReloadTime { get ; set ; }
     public float WaitTime { get ; set; }
-
+    [field : SerializeField]public int Coin {  get; set; }
     public float dashSpeed = 50f;
     public float dashTime = 0.2f;
     public float dashCooldown = 1f;
@@ -126,6 +126,22 @@ public class player : Character, IShootable
             {
                 chest.Open();  // เปิดกล่อง
             }
+        }
+    }
+    public void AddCoin(int value)
+    {
+        Coin += value;
+    }
+    public void Heals(int value)
+    {
+        Health += value;
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        Item item = other.GetComponent<Item>();
+        if (item)
+        {
+            item.PickUp(this);
         }
     }
 }

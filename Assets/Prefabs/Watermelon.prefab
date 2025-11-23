@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1394106932860120538}
   - component: {fileID: 9027738468655766672}
-  - component: {fileID: 3508447913734594232}
   - component: {fileID: 4732231102384470052}
+  - component: {fileID: 6768297590776108338}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Untagged
@@ -89,20 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3508447913734594232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8606758959808731287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2feefea78b44dc44ebd234f0b345321c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healAmount: 50
-  anim: {fileID: 0}
 --- !u!61 &4732231102384470052
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -149,3 +135,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6768297590776108338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8606758959808731287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5e73c513acde9c4a8e205f1c10b153d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ItemValue>k__BackingField: 20

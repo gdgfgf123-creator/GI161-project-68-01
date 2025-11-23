@@ -353,8 +353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a12bf90e5199044b0c65770b3a5c0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: mainmap
   interactText: {fileID: 4924766211476953079}
+  sceneName: mainmap
   key: 102
 --- !u!61 &8774560286837180717
 BoxCollider2D:
@@ -400,7 +400,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.96875, y: 1.0625}
+  m_Size: {x: 5, y: 4.3}
   m_EdgeRadius: 0
 --- !u!4 &4546425862206313158 stripped
 Transform:
