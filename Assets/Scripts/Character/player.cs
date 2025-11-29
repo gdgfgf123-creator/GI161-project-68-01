@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class player : Character, IShootable
 {
@@ -24,8 +25,8 @@ public class player : Character, IShootable
     void Start()
     {
 
-        HP.maxValue = 1000;
-        base.Intialize(1000);
+        HP.maxValue = 100;
+        base.Intialize(100);
         ReloadTime = 1.0f;
         WaitTime = 1.0f;
 
@@ -143,5 +144,24 @@ public class player : Character, IShootable
         {
             item.PickUp(this);
         }
+    }
+    public void GameOver()
+    {
+        // ส่งค่า Coin ไป Scene จบ
+        PlayerPrefs.SetInt("CoinCount", Coin);
+
+        // โหลด Scene จบเกม
+        SceneManager.LoadScene("GameOverScene");
+    }
+    protected override void OnDeath()
+    {
+        // ส่งค่าเหรียญไป Scene จบ
+        PlayerPrefs.SetInt("CoinCount", Coin);
+
+        // โหลด Scene จบเกม
+        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+
+        // เรียก base เพื่อให้ทำงานเดิมของ Character
+        base.OnDeath();
     }
 }
