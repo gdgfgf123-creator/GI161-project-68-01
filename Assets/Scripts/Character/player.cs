@@ -155,13 +155,16 @@ public class player : Character, IShootable
     }
     protected override void OnDeath()
     {
-        // ส่งค่าเหรียญไป Scene จบ
+        // เก็บชื่อ Scene ปัจจุบันตอน Player ตาย
+        string currentScene = SceneManager.GetActiveScene().name;
+        PlayerPrefs.SetString("LastScene", currentScene);
+
+        // ส่ง Coin ไปหน้า GameOver ถ้าต้องการ
         PlayerPrefs.SetInt("CoinCount", Coin);
 
-        // โหลด Scene จบเกม
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameOverScene");
+        // ไป Scene GameOver
+        SceneManager.LoadScene("GameOverScene");
 
-        // เรียก base เพื่อให้ทำงานเดิมของ Character
         base.OnDeath();
     }
 }
