@@ -11,6 +11,7 @@ public class GameOverUI : MonoBehaviour
         int coinCount = PlayerPrefs.GetInt("CoinCount", 0);
 
         // แสดงบน UI
+        
         coinText.text = "Coins Collected: " + coinCount;
     }
 }

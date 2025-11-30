@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class Banana : Weapon
 {
@@ -35,9 +34,5 @@ public class Banana : Weapon
     {
         Move();
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //
 }

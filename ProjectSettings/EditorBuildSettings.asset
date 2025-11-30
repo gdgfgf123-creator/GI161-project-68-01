@@ -6,17 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneGame.unity
-    guid: 95ead299068842443842396db5e57d8b
-  - enabled: 1
-    path: Assets/Scenes/bad cave.unity
-    guid: 2c2098960bcd8e644a32d28893316a94
+    path: Assets/Scenes/StartGame.unity
+    guid: 74d5e84f13b093349a4f55817e253cb8
   - enabled: 1
     path: Assets/Scenes/mainmap.unity
     guid: 615175253a82fc94b9d36074dc1a947a
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/bad cave.unity
+    guid: 2c2098960bcd8e644a32d28893316a94
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 6d1198fa472191849a42fca9334e9f07
